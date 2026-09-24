@@ -265,7 +265,8 @@ function Router() {
 }
 
 function App() {
-  return <QueryClientProvider client={queryClient}><WouterRouter><Router /></WouterRouter></QueryClientProvider>;
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '') || '';
+  return <QueryClientProvider client={queryClient}><WouterRouter base={base}><Router /></WouterRouter></QueryClientProvider>;
 }
 
 export default App;
